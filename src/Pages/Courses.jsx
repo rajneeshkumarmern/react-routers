@@ -1,17 +1,13 @@
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
-import CourseList from "../components/CourseList";
-
 function Courses() {
-  const location = useLocation();
-
-  useEffect(() => {
-    console.log("hash:", location.hash);
-    console.log("pathname:", location.pathname);
-    console.log("search:", location.search);
-  }, [location]);
-
-  return <CourseList />;
-}
-
-export default Courses;
+    return (
+      <div>
+        <h3>React Course</h3>
+        <h3>Angular Course</h3>
+        <h3>Spring Boot Course</h3>
+        <h3>Spring MicroServices Course</h3>
+        <h3>Java Full Stack Course</h3>
+      </div>
+    );
+  }
+  
+  export default Courses;
