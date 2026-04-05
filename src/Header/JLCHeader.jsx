@@ -1,15 +1,49 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function JLCHeader() {
   return (
     <div>
-      <h3>Welcome to CourseCube!!!</h3>
+      <h1>Welcome to CourseCube!!!</h1>
 
       <nav>
-        <Link to="/">Home</Link> |{" "}
-        <Link to="/courses">Courses</Link> |{" "}
-        <Link to="/about">About Us</Link> |{" "}
-        <Link to="/contact">Contact Us</Link>
+        <NavLink 
+          to="/" 
+          style={({ isActive }) => ({
+            marginRight: "10px",
+            textDecoration: isActive ? "underline" : "none"
+          })}
+        >
+          Home
+        </NavLink>
+
+        <NavLink 
+          to="/courses"
+          style={({ isActive }) => ({
+            marginRight: "10px",
+            textDecoration: isActive ? "underline" : "none"
+          })}
+        >
+          Courses
+        </NavLink>
+
+        <NavLink 
+          to="/about"
+          style={({ isActive }) => ({
+            marginRight: "10px",
+            textDecoration: isActive ? "underline" : "none"
+          })}
+        >
+          About
+        </NavLink>
+
+        <NavLink 
+          to="/contact"
+          style={({ isActive }) => ({
+            textDecoration: isActive ? "underline" : "none"
+          })}
+        >
+          Contact
+        </NavLink>
       </nav>
     </div>
   );

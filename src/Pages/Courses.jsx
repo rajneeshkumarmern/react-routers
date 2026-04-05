@@ -1,5 +1,11 @@
+import { useEffect } from "react";
+
 function Courses() {
-    return <h1>Courses Page</h1>;
-  }
-  
-  export default Courses;
+  useEffect(() => {
+    console.log("Courses page loaded");
+  }, []);
+
+  return <h2>This is Courses page</h2>;
+}
+
+export default Courses;
