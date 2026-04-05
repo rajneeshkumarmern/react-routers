@@ -1,11 +1,17 @@
 import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import CourseList from "../components/CourseList";
 
 function Courses() {
-  useEffect(() => {
-    console.log("Courses page loaded");
-  }, []);
+  const location = useLocation();
 
-  return <h2>This is Courses page</h2>;
+  useEffect(() => {
+    console.log("hash:", location.hash);
+    console.log("pathname:", location.pathname);
+    console.log("search:", location.search);
+  }, [location]);
+
+  return <CourseList />;
 }
 
 export default Courses;

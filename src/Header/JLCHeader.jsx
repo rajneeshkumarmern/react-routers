@@ -1,49 +1,29 @@
 import { NavLink } from "react-router-dom";
 
 function JLCHeader() {
+  const linkStyle = ({ isActive }) => ({
+    marginRight: "15px",
+    textDecoration: isActive ? "underline" : "none",
+    fontWeight: isActive ? "bold" : "normal",
+  });
+
   return (
     <div>
       <h1>Welcome to CourseCube!!!</h1>
 
       <nav>
-        <NavLink 
-          to="/" 
-          style={({ isActive }) => ({
-            marginRight: "10px",
-            textDecoration: isActive ? "underline" : "none"
-          })}
-        >
-          Home
-        </NavLink>
+        <NavLink to="/" style={linkStyle}>Home</NavLink>
 
         <NavLink 
-          to="/courses"
-          style={({ isActive }) => ({
-            marginRight: "10px",
-            textDecoration: isActive ? "underline" : "none"
-          })}
+          to="/courses?name=JLC#Hello" 
+          style={linkStyle}
         >
           Courses
         </NavLink>
 
-        <NavLink 
-          to="/about"
-          style={({ isActive }) => ({
-            marginRight: "10px",
-            textDecoration: isActive ? "underline" : "none"
-          })}
-        >
-          About
-        </NavLink>
+        <NavLink to="/about" style={linkStyle}>About</NavLink>
 
-        <NavLink 
-          to="/contact"
-          style={({ isActive }) => ({
-            textDecoration: isActive ? "underline" : "none"
-          })}
-        >
-          Contact
-        </NavLink>
+        <NavLink to="/contact" style={linkStyle}>Contact</NavLink>
       </nav>
     </div>
   );
